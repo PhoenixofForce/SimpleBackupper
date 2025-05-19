@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: backupper
+
+backup:
+  location: ./backups
+  folders:
+    - path: ./src
+      cron: "0 0 0 * * *"
+      fileFormat: tgz
+      retention: # 0 - disable deleting, -1 - disable creating backups
+        days: 7
+        weeks: 4
+        months: 6
+        years: 1
